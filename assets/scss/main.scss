@@ -64,7 +64,7 @@ span,input,label {
 
 @media screen and (max-width:$desktop) {
     body{
-        background:url("/assets/images/bg-bottom.svg"),url("/assets/images/bg-top.svg");
+        background:url("images/bg-bottom.svg"),url("images/bg-top.svg");
         background-repeat: no-repeat,no-repeat;
         background-position: left bottom, right top;
         background-color: $very_light_grayish_blue;
@@ -86,7 +86,7 @@ span,input,label {
 /* Use a media query to add a break point at 375px (mobile): */
 @media screen and (max-width:$mobile) {
     body{
-        background:url("/assets/images/bg-bottom.svg"),url("/assets/images/bg-top.svg");
+        background:urlurl("images/bg-bottom.svg"),url("images/bg-top.svg");
         background-repeat: no-repeat,no-repeat;
         background-position: left bottom, right top;
         background-size: 40%;

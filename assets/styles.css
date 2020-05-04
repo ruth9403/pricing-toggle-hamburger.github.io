@@ -215,7 +215,7 @@ span, input, label {
 
 @media screen and (max-width: 1440px) {
   body {
-    background: url("/assets/images/bg-bottom.svg"), url("/assets/images/bg-top.svg");
+    background: url("images/bg-bottom.svg"), url("images/bg-top.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: left bottom, right top;
     background-color: #F6F6FE;
@@ -237,7 +237,7 @@ span, input, label {
 /* Use a media query to add a break point at 375px (mobile): */
 @media screen and (max-width: 375px) {
   body {
-    background: url("/assets/images/bg-bottom.svg"), url("/assets/images/bg-top.svg");
+    background: urlurl("images/bg-bottom.svg"), url("images/bg-top.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: left bottom, right top;
     background-size: 40%;

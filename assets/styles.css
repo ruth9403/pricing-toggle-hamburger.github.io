@@ -98,7 +98,7 @@ input[type=checkbox]:checked ~ .container .anually {
 }
 .switch .temporada {
   margin-left: 1.5em;
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
 /* The slider */

@@ -1,0 +1,262 @@
+.hamburger_container label .menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: #FFF;
+  border-radius: 50% 50% 50% 50%;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+  cursor: pointer;
+}
+.hamburger_container label .hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: #000;
+  display: block;
+  transform-origin: center;
+  transition: 0.5s ease-in-out;
+}
+.hamburger_container label .hamburger:after, .hamburger_container label .hamburger:before {
+  transition: 0.5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+.hamburger_container label .hamburger:before {
+  top: -10px;
+}
+.hamburger_container label .hamburger:after {
+  bottom: -10px;
+}
+.hamburger_container label input {
+  display: none;
+}
+.hamburger_container label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+  border-radius: 0;
+}
+.hamburger_container label input:checked + .menu .hamburger {
+  transform: rotate(45deg);
+}
+.hamburger_container label input:checked + .menu .hamburger:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+.hamburger_container label input:checked + .menu .hamburger:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.hamburger_container label input:checked + .menu + ul {
+  opacity: 1;
+}
+.hamburger_container label ul {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.25s 0s ease-in-out;
+}
+.hamburger_container label a {
+  margin-bottom: 1em;
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.month {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .container .month {
+  display: block;
+  transition: 1s;
+}
+
+input[type=checkbox]:checked ~ .container .anually {
+  display: none;
+  transition: 1s;
+}
+
+.switch {
+  position: relative;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .temporada {
+  margin-left: 1.5em;
+  margin-right: 1em;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #696FDD;
+  height: 1.7em;
+  width: 3.4em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 2;
+  left: 6.5em;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.7em;
+  width: 1.7em;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 3;
+  right: 1.7em;
+}
+
+input:checked + .slider {
+  background-color: #696FDD;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.7em);
+  -ms-transform: translateX(1.7em);
+  transform: translateX(1.7em);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  margin: 0;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+span, input, label {
+  margin-bottom: 2em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.container .card {
+  text-align: center;
+  padding: 1em;
+  box-shadow: 5px 18px 18px #dddde2;
+}
+.container .card p {
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  font-size: 3em;
+}
+.container .card ul {
+  padding-left: 0;
+}
+.container .card ul li {
+  list-style: none;
+  padding: 1em;
+}
+
+.lighter {
+  background-color: #ffff;
+  border-radius: 1em;
+}
+.lighter ul li :last-child {
+  display: block;
+  background: linear-gradient(to right, #A3A8F0, #696FDD);
+  color: #ffff;
+  padding: 0.6em 1em 0.6em 1em;
+  border-radius: 0.6em;
+  text-decoration: none;
+}
+
+.darker {
+  background: linear-gradient(#A3A8F0, #696FDD);
+  border-radius: 1em;
+  margin-bottom: 1em;
+  color: #ffff;
+  padding-top: 1em;
+}
+.darker ul li :last-child {
+  display: block;
+  background-color: #ffff;
+  color: #696FDD;
+  padding: 0.6em 1em 0.6em 1em;
+  border-radius: 0.6em;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1440px) {
+  body {
+    background: url("/assets/images/bg-bottom.svg"), url("/assets/images/bg-top.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left bottom, right top;
+    background-color: #F6F6FE;
+  }
+
+  .container {
+    max-width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .container .card {
+    margin-bottom: 1.5em;
+    width: 28%;
+  }
+  .container .card li {
+    border-top: 0.001em solid rgba(200, 200, 249, 0.4);
+  }
+}
+/* Use a media query to add a break point at 375px (mobile): */
+@media screen and (max-width: 375px) {
+  body {
+    background: url("/assets/images/bg-bottom.svg"), url("/assets/images/bg-top.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left bottom, right top;
+    background-size: 40%;
+    background-color: #F6F6FE;
+  }
+
+  .container, .hamburger_container {
+    width: 100%;
+    /* The width is 100%, when the viewport is 800px or smaller */
+  }
+
+  .container .card {
+    width: 100%;
+    padding: 0 10% 0 10%;
+    margin-bottom: 1.5em;
+  }
+  .container .card li {
+    border-top: 0.001em solid rgba(200, 200, 249, 0.4);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

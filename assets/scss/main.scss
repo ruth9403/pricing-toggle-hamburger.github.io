@@ -1,0 +1,109 @@
+@import "partials/hamburger";
+@import "partials/switcher";
+@import "partials/variables";
+
+body{
+    font-family: $body_font_family,sans-serif;
+    font-size: $body_font_size;
+    font-weight: $font_weight_tittle;
+    text-align: center;
+}
+span,input,label {
+    margin-bottom: 2em;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    .card{
+        text-align: center;
+        padding: 1em;
+        box-shadow: 5px 18px 18px #dddde2;
+        & p{
+            margin-bottom: 0;
+            margin-top: 0.5em;
+            font-size: 3em;
+        }
+        & ul{
+            padding-left: 0;
+            & li{
+                list-style: none;
+                padding: 1em;
+            }
+        }
+    } 
+}
+.lighter{
+    background-color: #ffff;
+    border-radius: 1em;
+    & ul li :last-child{
+        display: block;
+        background: linear-gradient(to right,$linear_gradient_a, $linear_gradient_b);
+        color: #ffff;
+        padding: 0.6em 1em 0.6em 1em;
+        border-radius: 0.6em;
+        text-decoration: none;
+    }
+}
+
+.darker {
+    background: linear-gradient($linear_gradient_a, $linear_gradient_b);
+    border-radius: 1em;
+    margin-bottom: 1em;
+    color: #ffff;
+    padding-top: 1em;
+    & ul li :last-child{
+        display: block;
+        background-color: #ffff;
+        color: $linear_gradient_b;
+        padding: 0.6em 1em 0.6em 1em;
+        border-radius: 0.6em;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width:$desktop) {
+    body{
+        background:url("/assets/images/bg-bottom.svg"),url("/assets/images/bg-top.svg");
+        background-repeat: no-repeat,no-repeat;
+        background-position: left bottom, right top;
+        background-color: $very_light_grayish_blue;
+    }
+    
+    .container{ 
+       max-width: 80%; 
+       padding-left: 10%;
+       padding-right: 10%;
+       .card{
+            margin-bottom: 1.5em;
+            width: 28%;
+            & li{
+                border-top: 0.001em solid darken(rgba(#F6F6FE,0.4), 10%);
+            }
+       }
+    }
+}
+/* Use a media query to add a break point at 375px (mobile): */
+@media screen and (max-width:$mobile) {
+    body{
+        background:url("/assets/images/bg-bottom.svg"),url("/assets/images/bg-top.svg");
+        background-repeat: no-repeat,no-repeat;
+        background-position: left bottom, right top;
+        background-size: 40%;
+        background-color: $very_light_grayish_blue;
+    }
+    .container, .hamburger_container{
+      width:100%;
+       /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    .container{ 
+        .card{
+            width: 100%;
+            padding: 0 10% 0 10%;
+            margin-bottom: 1.5em;
+            & li{
+                border-top: 0.001em solid darken(rgba(#F6F6FE,0.4), 10%);
+            }
+        }
+    }
+}
